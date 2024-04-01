@@ -1,6 +1,11 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "CPGA SIMULATOR",
+  "name": "U.C HUB CGPA SIMULATOR",
+  "theme_color": "#0452C7",
+  "background_color": "#F1F0F0",
+  "display": "fullscreen",
+  "start_url": "/?home=true",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,9 +22,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }

@@ -4,9 +4,28 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+
+    screens: {
+      'xlg': {'max': '1920px'},
+      // => @media (max-width: 1920px) { ... }
+      'lg': {'max': '1440px'},
+      // => @media (max-width: 1440px) { ... }
+      'md': {'max': '1030px'},
+      // => @media (max-width: 1030px) { ... }
+      'tab': {'max': '800px'},
+      // => @media (max-width: 768px) { ... }
+      'sm-tab': {'max': '600px'},
+      // => @media (max-width: 600px) { ... }
+      'mobile': {'max': '430px'},
+      // => @media (max-width: 430px) { ... }
+      'smobile': {'max': '380px'},
+      // => @media (max-width: 360px) { ... }
+    },
+
     fontFamily:{
       "body1": ["Figtree"],
     },
+    
     extend: {
       colors: {
         "black": {
