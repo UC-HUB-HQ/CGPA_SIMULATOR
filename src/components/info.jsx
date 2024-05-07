@@ -14,7 +14,7 @@ const Info = ({cgpa}) => {
       </div>
       <div className="flex flex-col items-center justify-center mt-10 ">
         <h3 className="text-center mobile:w-[70%]">Satisfied with our CGPA generator? Share your score with us on twiiter?</h3>
-        <a rel="canonical" href={`https://twitter.com/intent/tweet?text=${message}&hashtags=uchub,cgpacalculator&via=@uc_hub_`} class="twitter-share-button flex items-center justify-center gap-2 px-5 py-3 mt-6 rounded-full bg-primary-700 mobile:mt-4" data-size="large" data-show-count="false">
+        <a rel="canonical" href={`https://twitter.com/intent/tweet?text=${message}&hashtags=uchub,cgpacalculator&via=uc_hub_`} class="twitter-share-button flex items-center justify-center gap-2 px-5 py-3 mt-6 rounded-full bg-primary-700 mobile:mt-4" data-size="large" data-show-count="false">
           <i class="bi bi-twitter-x"></i>
           <span className="text-[12px] font-bold ">Continue with Twitter</span>
         </a>
