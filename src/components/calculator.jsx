@@ -1,6 +1,6 @@
 import {useState} from "react";
 import deleteIcon  from '../assets/delete.svg'
-const Calculator = () => { 
+const Calculator = ({handleScore}) => { 
 
     const [totalNumberOfUnit, setTotalNumberOfUnit] = useState(null)
     const [totalCoursePoint, setTotalCoursePoint] = useState(null)
@@ -54,6 +54,7 @@ const Calculator = () => {
                 const prevTCP = parseInt(prevTNU) * cgpa.value
                 const newTCP = prevTCP + tcpCounter
                 setCgpaValue((newTCP/ newTNU).toFixed(2))
+                handleScore((newTCP/ newTNU).toFixed(2))
             }
             window.location.href = "#scoreDisplaySection"
         }
