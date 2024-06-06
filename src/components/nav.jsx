@@ -9,7 +9,7 @@ const Nav = () => {
                 <nav>
                     <ul className='flex gap-5 font-bold md:text-2xl md:gap-14 mobile:text-lg'>
                         <li>
-                            <a className=' text-black-100' href="https://uchubwaitlist.netlify.app/">Home</a>
+                            <a className=' text-black-100' href="https://theuchub.com/">Home</a>
                         </li>
                         <li className='underline text-primary-100'>
                             CGPA Simulator
