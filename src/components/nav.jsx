@@ -13,7 +13,7 @@ const Nav = () => {
                         </li>
                         <li className='underline text-primary-100'>
                             CGPA Simulator
-                        </li>
+                        </li> 
                     </ul>
                 </nav>
             </div>

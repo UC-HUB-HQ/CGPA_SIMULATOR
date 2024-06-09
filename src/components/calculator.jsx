@@ -13,8 +13,8 @@ const Calculator = ({handleScore}) => {
             </div>
             <div className="flex items-center justify-center col-span-2 text-center mobile:col-span-2 ">
                 <div className="grid w-full grid-cols-2 gap-0 mobile:grid-cols-3 ">
-                    <input type="number" placeholder="3" className="col-span-1 mobile:col-span-2 pb-2 text-center bg-transparent border-b-2 outline-none border-transparent border-b-black-400 courseUnit text-black-300 w-[70%] mobile:w-[70%] mx-auto placeholder:text-center placeholder:text-xs" max={5} /> 
-                    <input type="number" placeholder="5" className="col-span-1 mobile:col-span-1 pb-2 text-center bg-transparent border-b-2 outline-none border-transparent border-b-black-400 courseGrade text-black-300 w-[70%] mobile:w-[70%] mx-auto placeholder:text-center placeholder:text-xs" max={5} />
+                    <input type="number" placeholder="3" className="col-span-1 mobile:col-span-2 pb-2 text-center bg-transparent border-b-2 outline-none border-transparent border-b-black-400 courseUnit text-black-300 w-[70%] mobile:w-[70%] mx-auto placeholder:text-center placeholder:text-xs" min={0} /> 
+                    <input type="number" placeholder="5" className="col-span-1 mobile:col-span-1 pb-2 text-center bg-transparent border-b-2 outline-none border-transparent border-b-black-400 courseGrade text-black-300 w-[70%] mobile:w-[70%] mx-auto placeholder:text-center placeholder:text-xs" max={5} min={0}/>
                 </div>
             </div>
         </section>
@@ -127,8 +127,8 @@ const Calculator = ({handleScore}) => {
                     <section id="inputErrorMsg1" className="additionalInfo">
                         <label className="font-bold inputErrorMsg1 text-rose-600" htmlFor="CGPA"></label>
                         <div className="flex w-full gap-1 md:flex-col">
-                            <input className=" stayliteInfo bg-[#FFFDFD] pl-4 outline-none w-full h-12 rounded-l-xl placeholder:text-primary-300 CGPA md:rounded-tr-xl md:rounded-tl-xl md:rounded-bl-none mobile:placeholder:text-xs" id="CGPA" type="number" placeholder="Enter your current CGPA" />
-                            <input className=" stayliteInfo bg-[#FFFDFD] pl-4 outline-none w-full h-12 rounded-r-xl placeholder:text-primary-300 TNU md:rounded-br-xl md:rounded-bl-xl md:rounded-tr-none mobile:placeholder:text-xs" id="TNU" type="number" placeholder="Enter your total units for previous semesters" />
+                            <input className=" stayliteInfo bg-[#FFFDFD] pl-4 outline-none w-full h-12 rounded-l-xl placeholder:text-primary-300 CGPA md:rounded-tr-xl md:rounded-tl-xl md:rounded-bl-none mobile:placeholder:text-xs" id="CGPA" type="number" placeholder="Enter your current CGPA" min={0} max={5} />
+                            <input className=" stayliteInfo bg-[#FFFDFD] pl-4 outline-none w-full h-12 rounded-r-xl placeholder:text-primary-300 TNU md:rounded-br-xl md:rounded-bl-xl md:rounded-tr-none mobile:placeholder:text-xs" id="TNU" type="number" placeholder="Enter your total units for previous semesters" min={0} />
                         </div>
                         <p className="text-[#022150] text-[11px] ml-3">For fresh students, enter 0 for both.</p>
                     </section>
