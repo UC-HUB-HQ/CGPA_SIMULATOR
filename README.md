@@ -1,6 +1,6 @@
-# CGPA Calculator Component
+# CGPA Calculator
 
-This is a React component for calculating and displaying the CGPA (Cumulative Grade Point Average) and GPA (Grade Point Average) based on user input. It allows users to add, edit, and remove course entries with their respective units and grades.
+This is a React App for calculating and displaying the CGPA (Cumulative Grade Point Average) and GPA (Grade Point Average) based on user input. It allows users to add, edit, and remove course entries with their respective units and grades.
 
 ## Features
 
@@ -29,32 +29,6 @@ This is a React component for calculating and displaying the CGPA (Cumulative Gr
     npm install
     ```
 
-## Usage
-
-1. **Import the Calculator component:**
-
-    ```js
-    import Calculator from './path/to/Calculator';
-    ```
-
-2. **Include the component in your application:**
-
-    ```js
-    function App() {
-        const handleScore = (score) => {
-            console.log("New CGPA Score:", score);
-        };
-
-        return (
-            <div className="App">
-                <Calculator handleScore={handleScore} />
-            </div>
-        );
-    }
-
-    export default App;
-    ```
-
 ## Component Structure
 
 ### State Variables
@@ -62,7 +36,7 @@ This is a React component for calculating and displaying the CGPA (Cumulative Gr
 - `totalNumberOfUnit`: Holds the total number of units.
 - `totalCoursePoint`: Holds the total course points.
 - `cgpaValue`: Holds the calculated CGPA value.
-- `rows`: Holds the dynamically added course rows.
+- `rows`: Holds the dynamically added course rows in an array stored using the useState hook.
 
 ### Functions
 
@@ -83,35 +57,13 @@ This is a React component for calculating and displaying the CGPA (Cumulative Gr
 - The component uses Tailwind CSS for styling.
 - Ensure you have Tailwind CSS set up in your project to use this component as-is.
 
-## Example
-
-```js
-import React from 'react';
-import Calculator from './components/Calculator';
-
-function App() {
-    const handleScore = (score) => {
-        console.log("New CGPA Score:", score);
-    };
-
-    return (
-        <div className="App">
-            <Calculator handleScore={handleScore} />
-        </div>
-    );
-}
-
-export default App;
-```
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+Contributions are open to team members. Submit a pull request with clear message for any improvements made or bug fixes. Thank you
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-Feel free to customize this README to better fit your project's specifics, such as adding more detailed installation instructions, contributing guidelines, or expanding the usage section with additional examples.
