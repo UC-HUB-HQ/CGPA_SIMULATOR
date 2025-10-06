@@ -43,7 +43,7 @@ const MultiStepModal = ({ isOpen, onClose, setStudentCourse }) => {
 
         const data = await response.json();
         if (data.message === "success") {
-            const formattedData = data.data.map((d) => {
+            const formattedData = data.data.filter((d) => (!d["COURSE CODE"]?.startsWith("ENT"))).map((d) => {
                 return (
                     {
                         course_code: d["COURSE CODE"],
@@ -113,26 +113,32 @@ const MultiStepModal = ({ isOpen, onClose, setStudentCourse }) => {
 
         {/* Step 2: Department */}
         {step === 2 && (
-          <div className="space-y-4">
-            <label className="block text-sm font-medium">
-              Select Department
-            </label>
-            <select
-              value={departmentCode}
-              onChange={(e) => setDepartmentCode(e.target.value)}
-              className="w-full border rounded-lg p-2"
-            >
-              <option value="">Choose Department</option>
-              {currentFaculty &&
-                Object.entries(currentFaculty.departments).map(
-                  ([code, name]) => (
-                    <option key={code} value={code}>
-                      {name}
-                    </option>
-                  )
-                )}
-            </select>
-          </div>
+            <>
+              <div className="mt-4 p-2 bg-gray-50 rounded-lg text-sm text-gray-600">
+                ⚠️ Can’t find your course? Close this modal and enter your details
+                manually.
+              </div>
+              <div className="space-y-4">
+                <label className="block text-sm font-medium">
+                  Select Department
+                </label>
+                <select
+                  value={departmentCode}
+                  onChange={(e) => setDepartmentCode(e.target.value)}
+                  className="w-full border rounded-lg p-2"
+                >
+                  <option value="">Choose Department</option>
+                  {currentFaculty &&
+                    Object.entries(currentFaculty.departments).map(
+                      ([code, name]) => (
+                        <option key={code} value={code}>
+                          {name}
+                        </option>
+                      )
+                    )}
+                </select>
+              </div>
+            </>
         )}
 
         {/* Step 3: Level */}

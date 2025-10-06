@@ -23,7 +23,7 @@ const Calculator = ({handleScore}) => {
         <div className="flex items-center justify-center col-span-1 text-center mobile:col-span-1 ">
           <input
             type="text"
-            value={courseCode || ""}
+            value={courseCode ? courseCode : undefined}
             placeholder={`GNS 101`}
             className="pb-2 text-center bg-transparent border-b-2 border-transparent outline-none border-b-black-400 placeholder:text-center placeholder:text-black-400 mobile:w-full placeholder:text-xs"
           />
@@ -32,7 +32,7 @@ const Calculator = ({handleScore}) => {
           <div className="grid w-full grid-cols-2 gap-0 mobile:grid-cols-3 ">
             <input
               type="number"
-              value={Unit ?? ""}
+              value={Unit ? Unit : undefined}
               placeholder="3"
               className="col-span-1 mobile:col-span-2 pb-2 text-center bg-transparent border-b-2 outline-none border-transparent border-b-black-400 courseUnit text-black-300 w-[70%] mobile:w-[70%] mx-auto placeholder:text-center placeholder:text-xs"
               min={0}

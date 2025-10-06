@@ -12,7 +12,8 @@ export const faculties = {
       "0129": "ECONOMICS EDUCATION",
       "0161": "EDUCATIONAL FOUNDATION",
       "0145": "EDUCATIONAL MANAGEMENT",
-      "0194": "SCIENCE AND TECHNOLOGY EDUCATION (EDUCATIONAL TECHNOLOGY OPTION)",
+      "0194":
+        "SCIENCE AND TECHNOLOGY EDUCATION (EDUCATIONAL TECHNOLOGY OPTION)",
       "0123": "ENGLISH EDUCATION",
       "0124": "FRENCH EDUCATION",
       "0128": "GEOGRAPHY EDUCATION",
@@ -27,8 +28,8 @@ export const faculties = {
       "0151": "GUIDANCE AND COUNSELING EDUCATION",
       "0152": "EARLY CHILDHOOD AND PRIMARY EDUCATION",
       "0160": "SOCIAL STUDIES AND CIVIC EDUCATION",
-      "0153": "SPECIAL EDUCATION"
-    }
+      "0153": "SPECIAL EDUCATION",
+    },
   },
   "02": {
     facultyName: "FACULTY OF ENGINEERING",
@@ -38,8 +39,8 @@ export const faculties = {
       "0221": "MECHANICAL ENGINEERING",
       "0241": "CIVIL ENGINEERING",
       "0251": "AEROSPACE ENGINEERING",
-      "0261": "INDUSTRIAL & PRODUCTION ENGINEERING"
-    }
+      "0261": "INDUSTRIAL & PRODUCTION ENGINEERING",
+    },
   },
   "03": {
     facultyName: "FACULTY OF ARTS",
@@ -57,15 +58,15 @@ export const faculties = {
       "0311": "YORUBA & COMMUNICATION ARTS",
       "0353": "PEACE STUDIES",
       "0391": "LINGUISTICS",
-      "0311_its": "LINGUISTICS, AFRICAN LANGUAGES AND COMMUNICATION ARTS"
-    }
+      "0311_its": "LINGUISTICS, AFRICAN LANGUAGES AND COMMUNICATION ARTS",
+    },
   },
   "04": {
     facultyName: "FACULTY OF LAW",
     departments: {
       "0412": "COMMON AND ISLAMIC LAW",
-      "0411": "COMMON/CIVIL LAW"
-    }
+      "0411": "COMMON/CIVIL LAW",
+    },
   },
   "05": {
     facultyName: "FACULTY OF SCIENCE",
@@ -79,8 +80,8 @@ export const faculties = {
       "0571": "PHYSICS",
       "0581": "ZOOLOGY",
       "0501": "SCIENCE LABORATORY TECHNOLOGY",
-      "0562": "MICROBIOLOGY"
-    }
+      "0562": "MICROBIOLOGY",
+    },
   },
   "06": {
     facultyName: "FACULTY OF SOCIAL SCIENCE",
@@ -89,15 +90,15 @@ export const faculties = {
       "0621": "GEOGRAPHY AND PLANNING",
       "0631": "POLITICAL SCIENCE",
       "0651": "PSYCHOLOGY",
-      "0641": "SOCIOLOGY"
-    }
+      "0641": "SOCIOLOGY",
+    },
   },
   "07": {
     facultyName: "FACULTY OF CLINICAL SCIENCES",
     departments: {
       "0710": "MEDICINE AND SURGERY",
-      "0712": "NURSING"
-    }
+      "0712": "NURSING",
+    },
   },
   "08": {
     facultyName: "FACULTY OF MANAGEMENT SCIENCE",
@@ -112,8 +113,8 @@ export const faculties = {
       "0832": "PUBLIC ADMINISTRATION",
       "0833": "LOCAL GOVERNMENT DEVELOPMENT AND ADMINISTRATION",
       "0814": "TAXATION STUDIES",
-      "0841": "TAXATION"
-    }
+      "0841": "TAXATION",
+    },
   },
   "09": {
     facultyName: "FACULTY OF COMMUNICATION AND MEDIA STUDIES",
@@ -126,72 +127,72 @@ export const faculties = {
       "0910": "MASS COMMUNICATION",
       "0921": "PHOTOJOURNALISM",
       "0933": "PUBLIC RELATIONS AND ADVERTISING",
-      "0913": "RADIO AND TELEVISION BROADCAST"
-    }
+      "0913": "RADIO AND TELEVISION BROADCAST",
+    },
   },
-  "10": {
+  10: {
     facultyName: "SCHOOL OF TRANSPORT AND LOGISTICS STUDIES",
     departments: {
-      "1001": "TRANSPORT MANAGEMENT AND OPERATIONS",
-      "1004": "LOGISTICS AND SUPPLY CHAIN MANAGEMENT"
-    }
+      1001: "TRANSPORT MANAGEMENT AND OPERATIONS",
+      1004: "LOGISTICS AND SUPPLY CHAIN MANAGEMENT",
+    },
   },
-  "11": {
+  11: {
     facultyName: "FACULTY OF BASIC MEDICAL SCIENCES",
     departments: {
-      "1101": "PHYSIOLOGY"
-    }
+      1101: "PHYSIOLOGY",
+    },
   },
-  "12": {
+  12: {
     facultyName: "FACULTY OF DENTISTRY",
     departments: {
-      "1211": "DENTISTRY"
-    }
+      1211: "DENTISTRY",
+    },
   },
-  "13": {
+  13: {
     facultyName: "SCHOOL OF AGRICULTURE",
     departments: {
-      "1311": "AGRICULTURE",
-      "1321": "AGRICULTURAL ECONOMICS AND FARM MANAGEMENT",
-      "1322": "AGRICULTURAL EXTENTION AND RURAL MANAGEMENT",
-      "1323": "ANIMAL SCIENCE",
-      "1324": "CROP PRODUCTION"
-    }
+      1311: "AGRICULTURE",
+      1321: "AGRICULTURAL ECONOMICS AND FARM MANAGEMENT",
+      1322: "AGRICULTURAL EXTENTION AND RURAL MANAGEMENT",
+      1323: "ANIMAL SCIENCE",
+      1324: "CROP PRODUCTION",
+    },
   },
-  "14": {
+  14: {
     facultyName: "FACULTY OF BASIC CLINICAL SCIENCES",
     departments: {
-      "1411": "PHARMACOLOGY"
-    }
+      1411: "PHARMACOLOGY",
+    },
   },
-  "17": {
+  17: {
     facultyName: "FACULTY OF ALLIED HEALTH SCIENCES",
     departments: {
-      "1711": "RADIOGRAPHY AND RADIATION SCIENCE",
-      "1721": "MEDICAL LABORATORY SCIENCE",
-      "1731": "PHYSIOTHERAPY"
-    }
+      1711: "RADIOGRAPHY AND RADIATION SCIENCE",
+      1721: "MEDICAL LABORATORY SCIENCE",
+      1731: "PHYSIOTHERAPY",
+    },
   },
-  "18": {
+  18: {
     facultyName: "FACULTY OF ENVIRONMENTAL SCIENCE",
     departments: {
-      "1821": "BUILDING",
-      "1881": "URBAN AND REGIONAL PLANNING",
-      "1861": "SURVEY AND GEO-INFORMATICS",
-      "1871": "QUANTITY SURVEYING",
-      "1851": "INDUSTRIAL DESIGN",
-      "1891": "FINE ARTS",
-      "1831": "ESTATE MANAGEMENT",
-      "1811": "ARCHITECTURE",
+      1821: "BUILDING",
+      1881: "URBAN AND REGIONAL PLANNING",
+      1861: "SURVEY AND GEO-INFORMATICS",
+      1871: "QUANTITY SURVEYING",
+      1851: "INDUSTRIAL DESIGN",
+      1891: "FINE ARTS",
+      1831: "ESTATE MANAGEMENT",
+      1811: "ARCHITECTURE",
       "1813_not_t": "MEDICAL LABORATORY SCIENCE",
-      "1812": "RADIOGRAPHY",
-      "1841": "ENVIRONMENTAL MANAGEMENT"
-    }
+      1812: "RADIOGRAPHY",
+      1841: "ENVIRONMENTAL MANAGEMENT",
+    },
   },
-  "50": {
+  50: {
     facultyName: "SCHOOL OF LIBRARY ARCHIVAL AND INFORMATION SCIENCE",
     departments: {
-      "5011": "LIBRARY AND INFORMATION SCIENCE"
-    }
-  }
+      5011: "LIBRARY AND INFORMATION SCIENCE",
+    },
+  },
 };
