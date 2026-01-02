@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { faculties } from "../util/constant";
 
 const MultiStepModal = ({ isOpen, onClose, setStudentCourse }) => {

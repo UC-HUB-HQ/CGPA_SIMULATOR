@@ -293,6 +293,7 @@ const Calculator = ({handleScore}) => {
             setStudentCourse={setStudentCourse}
           />
         </div>
+
       </section>
     );
 
