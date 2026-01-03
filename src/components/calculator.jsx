@@ -1,6 +1,8 @@
 import {useState, useEffect} from "react";
 import deleteIcon from '../assets/delete.svg';
-import MultiStepModal from "./multistepModal";
+import Modal from "./Modal";
+import FileUpload from "./FileUpload";
+import StudentInfoForm from "./StudentInfoForm";
 
 const Calculator = ({handleScore}) => { 
 
@@ -12,9 +14,19 @@ const Calculator = ({handleScore}) => {
 
     const [studentCourses, setStudentCourse] = useState([]);
 
-    const [getStudentInfo, setGetStudentInfo] = useState(true);
+    const [getStudentInfo, setGetStudentInfo] = useState(false);
 
-
+    const [displayFileUpload, setDisplayFileUpload] = useState(false)
+    
+    const [result, setResult] = useState({
+      cgpa: 0,
+      confidence: 0,
+      department: "",
+      faculty: "",
+      inferred_current_level: "",
+      total_units_completed_ctnup: 0
+    })
+  
     const rowElement = (index, courseCode, Unit) => (
       <section
         key={index}
@@ -49,7 +61,6 @@ const Calculator = ({handleScore}) => {
       </section>
     );
 
-
     const [rows, setRows] = useState([])
 
     useEffect(() => {
@@ -71,17 +82,18 @@ const Calculator = ({handleScore}) => {
         }
     }, [studentCourses])
 
+    useEffect(() => {
+      setDisplayFileUpload(true);
+    }, [])
 
     const addRow = () => {
         setRows([...rows, rowElement(Math.random())])
     };
 
-
     const removeRow = (selectedRowKey) => {
         setRows(rows.filter(row => row.key !== selectedRowKey));
     };
       
-
     const getGpa = () => {
         // 
         if(inputValidation()){
@@ -116,7 +128,6 @@ const Calculator = ({handleScore}) => {
         }
         
     }
-
 
     const inputValidation = () =>{
         const stayLiteInputField =  document.querySelectorAll('.stayliteInfo');
@@ -175,7 +186,16 @@ const Calculator = ({handleScore}) => {
         return allStayLiteInputField && callCourseGrades && callCourseUnits
         
     }
+    
+    const closeModal = () => {
+      setGetStudentInfo(false);
+      setDisplayFileUpload(false)
+    }
 
+    const displayStudentInfoForm = () => {
+      setGetStudentInfo(true);
+      setDisplayFileUpload(false);
+    };
 
     return (
       <section className="flex items-center justify-center px-24 py-8 mt-16 rounded-lg shadow-lg mobile:mt-1 md:shadow-none bg-black-calcBgColor md:px-12 mobile:px-5 ">
@@ -194,6 +214,13 @@ const Calculator = ({handleScore}) => {
                   placeholder="Enter your current CGPA"
                   min={0}
                   max={5}
+                  value={result.cgpa}
+                  onChange={(e) =>
+                    setResult((prev) => ({
+                      ...prev,
+                      ...{ cgpa: e.target.value },
+                    }))
+                  }
                 />
                 <input
                   className=" stayliteInfo bg-[#FFFDFD] pl-4 outline-none w-full h-12 rounded-r-xl placeholder:text-primary-300 TNU md:rounded-br-xl md:rounded-bl-xl md:rounded-tr-none mobile:placeholder:text-xs"
@@ -201,6 +228,13 @@ const Calculator = ({handleScore}) => {
                   type="number"
                   placeholder="Enter your total units for previous semesters"
                   min={0}
+                  value={result.total_units_completed_ctnup}
+                  onChange={(e) =>
+                    setResult((prev) => ({
+                      ...prev,
+                      ...{ total_units_completed_ctnup: e.target.value },
+                    }))
+                  }
                 />
               </div>
               <p className="text-[#022150] text-[11px] ml-3">
@@ -287,13 +321,27 @@ const Calculator = ({handleScore}) => {
         </div>
 
         <div>
-          <MultiStepModal
-            isOpen={getStudentInfo}
-            onClose={() => setGetStudentInfo(false)}
-            setStudentCourse={setStudentCourse}
-          />
-        </div>
+          <Modal
+            isOpen={getStudentInfo || displayFileUpload}
+            onClose={() => closeModal()}
+          >
+            {getStudentInfo && (
+              <StudentInfoForm
+                setStudentCourse={setStudentCourse}
+                onClose={() => closeModal()}
+              />
+            )}
 
+            {displayFileUpload && (
+              <FileUpload
+                setResult={setResult}
+                onClose={() => closeModal()}
+                setStudentCourse={setStudentCourse}
+                displayStudentInfoForm={displayStudentInfoForm}
+              />
+            )}
+          </Modal>
+        </div>
       </section>
     );
 
