@@ -24,51 +24,52 @@ const FileUploadProcessing = ({
 
   const [error, setError] = useState("");
 
-  const fetchCourse = async (data) => {
-    const formData = new URLSearchParams();
 
-    formData.append("fac", data.facultyCode);
-    formData.append("dept", data.departmentCode);
-    formData.append("level", data.level);
-
-    try {
-      const response = await fetch(
-        "https://lasu-course-api.onrender.com/get-courses",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: formData,
-        }
-      );
-
-      const data = await response.json();
-      if (data.message === "success") {
-        const formattedData = data.data
-          .filter((d) => !d["COURSE CODE"]?.startsWith("ENT"))
-          .map((d) => {
-            return {
-              course_code: d["COURSE CODE"],
-              course_unit: d["UNIT"],
-            };
-          });
-        setStudentCourse(formattedData);
-        onClose();
-      } else if (data.message === "Level Not Found") {
-        toast.error(`No course found for the department and level chosen.`);
-      } else {
-        console.log(data);
-        toast.error(`please enter your course and unit manually.`);
-      }
-    } catch (err) {
-      toast.error(err);
-    } 
-  }
 
   useEffect(() => {
-    if (academicInfo.faculty) {
+    const fetchCourse = async (data) => {
+      const formData = new URLSearchParams();
 
+      formData.append("fac", data.facultyCode);
+      formData.append("dept", data.departmentCode);
+      formData.append("level", data.level);
+
+      try {
+        const response = await fetch(
+          "https://lasu-course-api.onrender.com/get-courses",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: formData,
+          }
+        );
+
+        const data = await response.json();
+        if (data.message === "success") {
+          const formattedData = data.data
+            .filter((d) => !d["COURSE CODE"]?.startsWith("ENT"))
+            .map((d) => {
+              return {
+                course_code: d["COURSE CODE"],
+                course_unit: d["UNIT"],
+              };
+            });
+          setStudentCourse(formattedData);
+          onClose();
+        } else if (data.message === "Level Not Found") {
+          toast.error(`No course found for the department and level chosen.`);
+        } else {
+          console.log(data);
+          toast.error(`please enter your course and unit manually.`);
+        }
+      } catch (err) {
+        toast.error(err);
+      }
+    };
+
+    if (academicInfo.faculty) {
       try {
         setDisplayText("Validating academic data");
         const response = extractLasuCourseApiPayload(academicInfo);
@@ -76,12 +77,11 @@ const FileUploadProcessing = ({
           setDisplayText("Getting your courses for this semester");
           fetchCourse(response);
         }
-      }
-      catch (err) {
+      } catch (err) {
         setError(err.message);
       }
     }
-  }, [academicInfo]);
+  }, [academicInfo, onClose, setStudentCourse]);
 
   return (
     <div>

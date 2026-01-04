@@ -141,19 +141,22 @@ const FileUpload = ({
 
       const dataRes = await response.json();
 
+      console.log(dataRes)
+
+
+
       if (!response.ok) {
         await waitForProgress(20);
-        throw { phase: "upload", message: dataRes.message };
+        throw new Error(dataRes.message);
       }
 
       clearInterval(uploadInterval);
       setUploadProgress(50);
 
       if (dataRes.message?.error) {
-        setStatus("extracting");
-        extractInterval = runProgress(50, 95);
-        await waitForProgress(60); 
-        throw { phase: "extract", message: dataRes.message.error };
+        setStatus("error");
+        setError(dataRes.message?.error);
+        return;
       }
 
       setStatus("extracting");
@@ -173,9 +176,8 @@ const FileUpload = ({
       clearInterval(uploadInterval);
       clearInterval(extractInterval);
       setStatus("error");
-      setError(String(err.message || err));
       displayStudentInfoForm();
-      toast.error("Our model is currently unavailable. Please proceed manually.");
+      toast.error(error);
     }
   };
 
