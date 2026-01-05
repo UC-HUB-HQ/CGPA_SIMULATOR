@@ -15,7 +15,7 @@ const FileUploadProcessing = ({
     { label: "Level", value: `${academicInfo.inferred_current_level} Level` },
     {
       label: "Total Units",
-      value: `${academicInfo.total_units_completed_ctnup} Units`,
+      value: `${academicInfo.total_units_registered_ctnu} Units`,
     },
     { label: "Current CGPA", value: `${academicInfo.cgpa} / 5.0` },
   ];
@@ -61,7 +61,6 @@ const FileUploadProcessing = ({
         } else if (data.message === "Level Not Found") {
           toast.error(`No course found for the department and level chosen.`);
         } else {
-          console.log(data);
           toast.error(`please enter your course and unit manually.`);
         }
       } catch (err) {
