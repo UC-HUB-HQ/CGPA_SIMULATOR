@@ -59,7 +59,6 @@ const StudentInfoForm = ({ setStudentCourse, onClose }) => {
         toast.error(`No course found for the department and level chosen.`);
       }
       else {
-        console.log(data);
         toast.error(`please enter your course and unit manually.`);
       }
     }

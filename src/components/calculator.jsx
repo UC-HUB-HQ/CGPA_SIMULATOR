@@ -24,8 +24,8 @@ const Calculator = ({handleScore}) => {
       department: "",
       faculty: "",
       inferred_current_level: "",
-      total_units_completed_ctnup: 0
-    })
+      total_units_registered_ctnu: 0,
+    });
   
     const rowElement = (index, courseCode, Unit) => (
       <section
@@ -228,11 +228,11 @@ const Calculator = ({handleScore}) => {
                   type="number"
                   placeholder="Enter your total units for previous semesters"
                   min={0}
-                  value={result.total_units_completed_ctnup}
+                  value={result.total_units_registered_ctnu}
                   onChange={(e) =>
                     setResult((prev) => ({
                       ...prev,
-                      ...{ total_units_completed_ctnup: e.target.value },
+                      ...{ total_units_registered_ctnu: e.target.value },
                     }))
                   }
                 />

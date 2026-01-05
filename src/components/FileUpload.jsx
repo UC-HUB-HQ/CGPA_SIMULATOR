@@ -21,7 +21,7 @@ const FileUpload = ({
     department: "",
     faculty: "",
     inferred_current_level: "",
-    total_units_completed_ctnup: 0,
+    total_units_registered_ctnu: 0,
   });
 
   const [isSuccessFulExtraction, setIsSuccessfulExtraction] = useState(false);
@@ -141,10 +141,6 @@ const FileUpload = ({
 
       const dataRes = await response.json();
 
-      console.log(dataRes)
-
-
-
       if (!response.ok) {
         await waitForProgress(20);
         throw new Error(dataRes.message);
@@ -177,7 +173,7 @@ const FileUpload = ({
       clearInterval(extractInterval);
       setStatus("error");
       displayStudentInfoForm();
-      toast.error(error);
+      toast.error(err.message);
     }
   };
 
@@ -206,7 +202,7 @@ const FileUpload = ({
       <div className="text-center mb-8">
         <h2 className="text-2xl font-bold text-slate-800">Upload File</h2>
         <p className="text-slate-500 mt-2">
-          Upload your academic transcript for analysis
+          Upload your LIDC Profile for analysis
         </p>
       </div>
 
@@ -313,4 +309,7 @@ const FileUpload = ({
 };
 
 export default FileUpload;
+
+
+
 
